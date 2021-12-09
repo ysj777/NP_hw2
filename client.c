@@ -48,7 +48,7 @@ void *server_connect(int socket_fd, struct sockaddr_in *address){
         printf("connect failed");
         exit(0);
     }
-    else printf("Successful connecting\n");
+    else printf("Connect success\n");
 }
 
 void *receive_data(void *data_ptr){
@@ -93,7 +93,7 @@ void *receive_data(void *data_ptr){
                     printf("%s", server_mesg);
                     print_board();
                     if(strncmp("<Turn>", server_mesg, 6) == 0)
-                        printf("Please input a integer between 0 ~ 8\n>");
+                        printf("Please enter a integer between 0 ~ 8\n>");
                 }
                 else 
 					sscanf(server_mesg, "%d %d %d %d %d %d %d %d %d", &board[0], &board[1], &board[2], &board[3], &board[4], &board[5], &board[6], &board[7], &board[8]);
